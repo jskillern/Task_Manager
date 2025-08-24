@@ -1,18 +1,32 @@
+import tkinter as tk
+from tkinter import ttk
+from functions import *  
+
+
 def main():
-    import tkinter as tk
-    from tkinter import ttk
+      
 
 
-#make the program window
+#window parameters
     root = tk.Tk()
-    root.title("Test Title")
     root.minsize(250, 100)
     root.maxsize(500, 800)
     root.geometry("500x500")
+    tk.Label(root, text = "To-Do List").grid()
 
-    tk.Label(root, text = "To-Do List").pack()
-
+#creating buttons
+    add = tk.Button(root, text="Add", command = add_task)
+    add.grid(row=1, column=0)
     
+    complete = tk.Button(root, text="Complete", command = complete_task)
+    complete.grid(row=1, column=1)
+
+
+
+
+
+
+
 
     root.mainloop()
 
